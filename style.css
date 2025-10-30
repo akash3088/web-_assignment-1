@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --primary-gradient: linear-gradient(135deg, #d97205 0%, #58ff04d4 100%);
+    --secondary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --accent-color: #00e5ff;
+    --text-color: #2d3748;
+    --light-text: #2d3748;
+    --background: #f8f9fa;
+    --card-bg: rgba(255, 255, 255, 0.9);
+    --shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.3);
+    --hover-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.4);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+header {
+    background: var(--primary-gradient);
+    color: var(--light-text);
+    text-align: center;
+    padding: 2rem 0;
+    box-shadow: var(--shadow);
+    position: relative;
+    overflow: hidden;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+    pointer-events: none;
+}
+
+header h1 {
+    margin: 0;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+nav ul {
+    list-style: none;
+    margin: 1.5rem 0 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    color: var(--light-text);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+main {
+    padding: 2rem;
+    background-color: var(--card-bg);
+    margin: 2rem auto;
+    width: 85%;
+    max-width: 1200px;
+    box-shadow: var(--shadow);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+}
+
+section {
+    margin-bottom: 2rem;
+}
+
+footer {
+    background: var(--secondary-gradient);
+    color: var(--light-text);
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: 3rem;
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+tr:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.02);
+}
+
+td {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+td:first-child {
+    font-weight: 600;
+    color: #4a5568;
+    width: 30%;
+}
+
+h2 {
+    color: #4a5568;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 50px;
+    height: 3px;
+    background: var(--accent-color);
+    border-radius: 3px;
+}
+
+.profile-photo {
+    text-align: center;
+    margin: 2.5rem 0;
+}
+
+.profile-photo img {
+    width: 280px;
+    height: 330px;
+    border-radius: 15px;
+    object-fit: cover;
+    box-shadow: 0 10px 25px rgb(0, 229, 255);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 5px solid white;
+}
+
+.profile-photo img:hover {
+    transform: scale(1.05) rotate(2deg);
+    box-shadow: 0 15px 35px rgb(255, 0, 0);
+}
+
+/* Enhance lists in resume */
+main ul {
+    list-style-type: none;
+    padding-left: 1rem;
+}
+
+main ul li {
+    position: relative;
+    padding: 0.5rem 0 0.5rem 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+main ul li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+    font-size: 1.2rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    main {
+        width: 95%;
+        padding: 1.5rem;
+    }
+    
+    nav ul {
+        flex-wrap: wrap;
+    }
+    
+    .profile-photo img {
+        width: 220px;
+        height: 270px;
+    }
+}
